@@ -20,7 +20,7 @@ Firebase affects the application in not-release environment by sending a
 - `@react-native-firebase/dynamic-links`: "^7.x.x",
 - `@react-native-firebase/messaging`: "^7.x.x"
 
-## Why does it happens?
+## Why does it happen?
 
 An ios handles deep linking differently, depending on the application state.
 
