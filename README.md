@@ -47,6 +47,8 @@ I'm going to use _Swift_ integration with _Objective-C_ via the bridge to implem
 3. Go to your `AppDelegate.m` file and add lock/unlock capabilites as stated in this repo's [`AppDelegate.m`](ios/projectName/AppDelegate.m#L84) file. Code explanations can be found there.
 4. Import your newly created `DeepLink` native module to your `javascript` codebase and call `DeepLink.sendAppCanHandleLinksSignal()` method when your application has finished loading and can properly handle deep linking events. Look at the [`App.js`](App.js#L17) file for the reference.
 
+Note: You CAN NOT use [Universal links](https://developer.apple.com/ios/universal-links/), like https://app.com/page in your intercom Push Notification payload. It just won't work. ou can only use url schema based links as a URL in Intercom push notification payload, like app://page. Look [here](https://developers.intercom.com/installing-intercom/docs/ios-deep-linking) of how to setup it.
+
 I've highlighted only the meaningfull files for this fix to not overwhelm you. Try to include all parts of [`AppDelegate.m`](ios/projectName/AppDelegate.m) file and other files to your source code to prevent errors. Also, don't forget to replace values like `<projectName>` with values from your project.
 
 This solution will ensure that any deep-link your application receives while your app is launching will be handled only when your application is ready to handle it. Basically, this is more advanced and convoluted `setTimeout` solution.
